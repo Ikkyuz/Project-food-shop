@@ -4,57 +4,50 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <header className="bg-gray-800 p-4">
-        <ul className="flex justify-between items-center space-x-4 px-4">
+      <header className="bg-red-600 p-4">
+        <ul className="flex justify-between items-center space-x-4 px-4 text-white ">
           <li>
-            <NavLink to="/" className="text-gray-300 hover:text-white">
-              Logo
+            <NavLink to="/" className="text-xl font-bold hover:text-gray-300">
+              Buffet Lounge
             </NavLink>
           </li>
           <li>
-            <NavLink to="/order" className="text-gray-300 hover:text-white">
+            <NavLink to="/order" className="font-bold hover:text-gray-300">
               Order
             </NavLink>
           </li>
         </ul>
         <hr className="my-2" />
         <nav className="container mx-auto">
-          <ul className="flex justify-center space-x-4">
+          <ul className="flex justify-center items-center space-x-8 text-white text-lg">
             <li>
-              <NavLink
-                to="/"
-                exact
-                activeClassName="text-white border-b-2 border-white"
-                className="text-gray-300 hover:text-white"
-              >
-                Home
+              <NavLink to="/" className="hover:text-gray-300">
+                หมู
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/about"
-                activeClassName="text-white border-b-2 border-white"
-                className="text-gray-300 hover:text-white"
-              >
-                About
+              <NavLink to="/" className="hover:text-gray-300">
+                เนื้อ
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/contact"
-                activeClassName="text-white border-b-2 border-white"
-                className="text-gray-300 hover:text-white"
-              >
-                Contact
+              <NavLink to="/" className="hover:text-gray-300">
+                ไก่
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/shop"
-                activeClassName="text-white border-b-2 border-white"
-                className="text-gray-300 hover:text-white"
-              >
-                Shop
+              <NavLink to="/" className="hover:text-gray-300">
+                ผัก
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/" className="hover:text-gray-300">
+                เครื่องดื่ม
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/" className="hover:text-gray-300">
+                ของหวาน
               </NavLink>
             </li>
           </ul>

@@ -7,6 +7,7 @@ const cors = require("cors");
 const menuRoute = require('./routes/menu.route');
 const orderRoute = require('./routes/order.route');
 const tableRoute = require('./routes/table.route');
+const orderItemRoute = require('./routes/orderItem.route');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -19,6 +20,7 @@ app.get("/",(req, res)=>{
 app.use("/menus", menuRoute);
 app.use("/orders", orderRoute);
 app.use("/tables", tableRoute);
+app.use("/orderItems", orderItemRoute);
 
 app.listen(port, () => {
     console.log("App started at port: " + port);

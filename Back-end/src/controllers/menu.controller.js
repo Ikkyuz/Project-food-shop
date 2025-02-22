@@ -27,7 +27,6 @@ exports.getMenuById = async (req, res) => {
     }
 } 
 
-/*************  ✨ Codeium Command 🌟  *************/
 exports.createMenu = async (req, res) => {
     try {
         const { name, description, price } = req.body;

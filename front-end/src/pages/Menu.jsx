@@ -11,7 +11,7 @@ const Menu = () => {
           <img className='w-full h-48 object-cover mt-4' src={item.image} alt={item.name} />
           <h2 className='text-xl font-bold'>{item.name}</h2>
           <p className='text-md mt-4'>{item.description}</p>
-          <p className='text-lg'>Price: {item.price} Baht</p>
+          <p className='text-lg'>ราคา: {item.price} บาท</p>
         </div>
       </NavLink>
     );

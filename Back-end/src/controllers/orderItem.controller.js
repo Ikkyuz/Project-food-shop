@@ -36,3 +36,33 @@ exports.getOrderItemById = async (req, res) => {
         res.status(500).json({ error: "An error occurred while fetching the order item." });
     }
 }
+
+exports.createOrderItem = async (req, res) => {
+    try {
+        const { menuId, orderId, quantity } = req.body;
+        const orderItem = await prisma.orderItem.create({
+            data: {
+                menuId: parseInt(menuId),
+                orderId: parseInt(orderId),
+                quantity: parseInt(quantity)
+            }
+        });
+        res.status(201).json(orderItem);
+    } catch (error) {
+        res.status(500).json({ error: "An error occurred while creating the order item." });
+    }
+}
+
+exports.deleteOrderItem = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await prisma.orderItem.delete({
+            where: {
+                id: parseInt(id)
+            }
+        });
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ error: "An error occurred while deleting the order item." });
+    }
+}

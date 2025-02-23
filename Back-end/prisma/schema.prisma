@@ -20,7 +20,7 @@ model Menu {
   price       Float
   imageUrl    String?
   categoryId  String   @db.ObjectId
-  category    Category     @relation(fields: [categoryId], references: [id])     
+  category    Category @relation(fields: [categoryId], references: [id])     
   orders      OrderItem[]
 }
 

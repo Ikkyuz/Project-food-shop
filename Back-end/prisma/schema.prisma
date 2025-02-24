@@ -17,26 +17,26 @@ model Menu {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   name        String?
   description String?
-  price       Float
+  price       Float?
   imageUrl    String?
+  category    Category @relation(fields: [categoryId], references: [id])    
   categoryId  String   @db.ObjectId
-  category    Category @relation(fields: [categoryId], references: [id])     
   orders      OrderItem[]
 }
 
 model Order {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  tableId     String   @db.ObjectId
   table       Table    @relation(fields: [tableId], references: [id])
+  tableId     String   @db.ObjectId 
   items       OrderItem[]
 }
 
 model OrderItem {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  orderId   String   @db.ObjectId
   order     Order    @relation(fields: [orderId], references: [id])
-  menuId    String   @db.ObjectId
+  orderId   String   @db.ObjectId
   menu      Menu     @relation(fields: [menuId], references: [id])
+  menuId    String   @db.ObjectId
   quantity  Int
 }
 
